@@ -2,8 +2,10 @@
 
 const theHeading=document.querySelector("#heading2")
 
+
 function changeText(){
-    theHeading.textContent= "YAY"
+    const theText=document.querySelector('input').value
+    theHeading.textContent= theText
 }
 
 const button = document.querySelector('button') 
