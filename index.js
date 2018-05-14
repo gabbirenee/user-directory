@@ -1,6 +1,6 @@
 
 
-const theHeading=document.querySelector("h1")
+const theHeading=document.querySelector("#heading2")
 
 function changeText(){
     theHeading.textContent= "YAY"
