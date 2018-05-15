@@ -10,7 +10,7 @@ const handleSubmit = function(ev){
     const favColor=form.favoriteColor.value
 
     const p = document.createElement('p')
-    p.textContent = `${userName}, ${age}, ${favColor}`
+    p.textContent = `${userName}, ${age}`
     p.style.backgroundColor=favColor
     users.appendChild(p)
    
