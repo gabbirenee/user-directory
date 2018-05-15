@@ -10,25 +10,16 @@ function renderColor(color){
 }
 
 function renderListItem () {
-    const x=document.createElement('li')   //list items
-    // const ageItem=document.createElement('li')
-    // const colorItem=document.createElement('li')
+    const x=document.createElement('li')
     return x
 }
 
-const handleSubmit = function(ev){
-    ev.preventDefault()
-    const form = ev.target
-    const userName=form.userName.value
-    const users=document.querySelector("#users")
-    const age=form.age.value
-    const favColor=form.favoriteColor.value
-
+function renderList (userName, age, favColor) {
     const list = document.createElement('ul')   //unordered list
-    
-    const nameItem=renderListItem();
-    const ageItem=renderListItem();
-    const colorItem=renderListItem();
+
+    nameItem=renderListItem();
+    ageItem=renderListItem();
+    colorItem=renderListItem();
 
     nameItem.textContent=`Name: ${userName}`
     ageItem.textContent=`Age: ${age}`
@@ -39,6 +30,17 @@ const handleSubmit = function(ev){
     list.appendChild(ageItem)   //appends age to list
     list.appendChild(colorItem) //append color to the list
     users.appendChild(list) //attatches the list to the div
+}
+
+const handleSubmit = function(ev){
+    ev.preventDefault()
+    const form = ev.target
+    const userName=form.userName.value
+    const users=document.querySelector("#users")
+    const age=form.age.value
+    const favColor=form.favoriteColor.value
+    
+    renderList(userName, age, favColor);
    
     // users.innerHTML += `<p>${userName}, ${age}</p>`
     form.reset()
