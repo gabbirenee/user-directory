@@ -9,6 +9,13 @@ function renderColor(color){
     return colorDiv
 }
 
+function renderListItem () {
+    const x=document.createElement('li')   //list items
+    // const ageItem=document.createElement('li')
+    // const colorItem=document.createElement('li')
+    return x
+}
+
 const handleSubmit = function(ev){
     ev.preventDefault()
     const form = ev.target
@@ -18,10 +25,11 @@ const handleSubmit = function(ev){
     const favColor=form.favoriteColor.value
 
     const list = document.createElement('ul')   //unordered list
-    const nameItem = document.createElement('li')   //list items
-    const ageItem=document.createElement('li')
-    const colorItem=document.createElement('li')
     
+    const nameItem=renderListItem();
+    const ageItem=renderListItem();
+    const colorItem=renderListItem();
+
     nameItem.textContent=`Name: ${userName}`
     ageItem.textContent=`Age: ${age}`
     colorItem.textContent='Favorite Color: '
