@@ -1,7 +1,8 @@
 
 const form = document.querySelector('form#userForm') 
 
-function renderColor(color){
+//Renders the color div that is displayed as the user's favorite color
+function renderColor(color) {
     const colorDiv = document.createElement('div')
     colorDiv.style.backgroundColor=color
     colorDiv.style.width='6rem' //width=6rems
@@ -9,17 +10,11 @@ function renderColor(color){
     return colorDiv
 }
 
-function renderListItem () {
-    const x=document.createElement('li')
-    return x
-}
-
-function renderList (userName, age, favColor) {
-    const list = document.createElement('ul')   //unordered list
-
-    nameItem=renderListItem();
-    ageItem=renderListItem();
-    colorItem=renderListItem();
+//Renders the Name, age, and favorite color list Items and appends them to the list
+function renderListItem (list, userName, age, favColor) {
+    const nameItem=document.createElement('li')
+    const ageItem=document.createElement('li')
+    const colorItem=document.createElement('li')
 
     nameItem.textContent=`Name: ${userName}`
     ageItem.textContent=`Age: ${age}`
@@ -29,6 +24,13 @@ function renderList (userName, age, favColor) {
     list.appendChild(nameItem)  //appends name to list
     list.appendChild(ageItem)   //appends age to list
     list.appendChild(colorItem) //append color to the list
+}
+
+function renderList (userName, age, favColor) {
+    const list = document.createElement('ul')   //unordered list
+
+    renderListItem(list, userName, age, favColor)
+
     users.appendChild(list) //attatches the list to the div
 }
 
