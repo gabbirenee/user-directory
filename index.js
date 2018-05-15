@@ -12,12 +12,21 @@ const handleSubmit = function(ev){
     const list = document.createElement('ul')   //unordered list
     const nameItem = document.createElement('li')   //list items
     const ageItem=document.createElement('li')
+    const colorItem=document.createElement('li')
     
     nameItem.textContent=`Name: ${userName}`
     ageItem.textContent=`Age: ${age}`
+    colorItem.textContent='Favorite Color: '
 
-    list.appendChild(nameItem)
-    list.appendChild(ageItem)
+    const colorDiv = document.createElement('div')
+    colorDiv.style.backgroundColor=favColor
+    colorDiv.style.width='6rem' //width=6rems
+    colorDiv.style.height='3rem'    //height=3rems  rems are relative to the font size on the page
+
+    colorItem.appendChild(colorDiv) //append colored div to the color item
+    list.appendChild(nameItem)  //appends name to list
+    list.appendChild(ageItem)   //appends age to list
+    list.appendChild(colorItem) //append color to the list
     users.appendChild(list) //attatches the list to the div
    
     // users.innerHTML += `<p>${userName}, ${age}</p>`
