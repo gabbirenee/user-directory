@@ -1,13 +1,12 @@
 
-
-const theHeading=document.querySelector("#heading2")
-
+const form = document.querySelector('form#userForm') 
 
 const handleSubmit = function (ev){
     ev.preventDefault()
+    const form = ev.target
+    const userName=form.userName.value
     const theHeading=document.querySelector("#heading2")
-    const theText=document.querySelector('input')
-    theHeading.textContent= theText.value
+    theHeading.textContent=userName
 }
 
 const form = document.querySelector('form#userForm') 
