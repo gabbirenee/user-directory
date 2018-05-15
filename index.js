@@ -3,12 +3,15 @@
 const theHeading=document.querySelector("#heading2")
 
 
-function changeText(){
-    const theText=document.querySelector('input').value
-    theHeading.textContent= theText
+const handleSubmit = function (ev){
+    ev.preventDefault()
+    const theHeading=document.querySelector("#heading2")
+    const theText=document.querySelector('input')
+    theHeading.textContent= theText.value
 }
 
-const button = document.querySelector('button') 
+const form = document.querySelector('form#userForm') 
 
-button.addEventListener('click', changeText)
+form.addEventListener('submit', handleSubmit)
+
 
