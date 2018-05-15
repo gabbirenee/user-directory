@@ -9,10 +9,16 @@ const handleSubmit = function(ev){
     const age=form.age.value
     const favColor=form.favoriteColor.value
 
-    const p = document.createElement('p')
-    p.textContent = `${userName}, ${age}`
-    p.style.backgroundColor=favColor
-    users.appendChild(p)
+    const list = document.createElement('ul')   //unordered list
+    const nameItem = document.createElement('li')   //list items
+    const ageItem=document.createElement('li')
+    
+    nameItem.textContent=`Name: ${userName}`
+    ageItem.textContent=`Age: ${age}`
+
+    list.appendChild(nameItem)
+    list.appendChild(ageItem)
+    users.appendChild(list) //attatches the list to the div
    
     // users.innerHTML += `<p>${userName}, ${age}</p>`
     form.reset()
