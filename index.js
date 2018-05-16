@@ -13,24 +13,31 @@ function renderColor(color) {
 //Renders the list items
 function renderListItem (label, value) {
     const item = document.createElement('li')
-    item.textContent=`${label}: `
+
+    const term = document.createElement('dt')
+    term.textContent=label
+
+    const description=document.createElement('dd')
+
+
     try {
-        item.appendChild(value)
+        description.appendChild(value)
     } catch (e) {
-        item.textContent += value
+        description.textContent += value
     }
+    
+    item.appendChild(term)
+    item.appendChild(description)
     return item
 }
 
 //Renders the list and appends the list to the empty html div
-function renderList (user) {
+function renderList (data) {
     const list = document.createElement('ul')   //unordered list
-
-    Object.keys(user).map(function(label){  //Object.keys returns array of the keys
-        const item= renderListItem(label, user[label])
+    Object.keys(data).map(function(label){  //Object.keys returns array of the keys
+        const item= renderListItem(label, data[label])
         list.appendChild(item)
     })
-
     return list
 }
 
@@ -42,18 +49,14 @@ const handleSubmit = function(ev){
         'Age': form.age.value,
         'Favorite Color': renderColor(form.favoriteColor.value),
     }
-    
     const users=document.querySelector("#users")
-    
-    const list= renderList(user)
+    const list = renderList(user)
     users.appendChild(list) //attatches the list to the div
-   
-    // users.innerHTML += `<p>${userName}, ${age}</p>`
+
     form.reset()
     form.userName.focus()
+
+    // users.innerHTML += `<p>${userName}, ${age}</p>`          
 }
 
 form.addEventListener('submit', handleSubmit)
-
-
-

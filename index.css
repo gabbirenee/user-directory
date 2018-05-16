@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 body{
-    font-family: sans-serif;
+    font-family: Dosis, sans-serif;
     background-color:lavender;
 }
 h1{
     text-align:center;
     font-size: 24pt;
     font-weight: bold;
-    text-decoration: underline;
 }
 
 h2{
@@ -32,3 +33,4 @@ label {
     font-weight: bold;
 
 }
+
