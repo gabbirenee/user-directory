@@ -33,7 +33,7 @@ function renderListItem (label, value) {
 
 //Renders the list and appends the list to the empty html div
 function renderList (data) {
-    const list = document.createElement('ul')   //unordered list
+    const list = document.createElement('dl')   //unordered list
     Object.keys(data).map(function(label){  //Object.keys returns array of the keys
         const item= renderListItem(label, data[label])
         list.appendChild(item)

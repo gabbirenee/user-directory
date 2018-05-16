@@ -45,3 +45,7 @@ main {
     padding: 1rem;
     color: whitesmoke;
 }
+
+dl li {
+    list-style: none; 
+}
