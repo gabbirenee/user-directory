@@ -26,6 +26,7 @@ function renderListItem (list, userName, age, favColor) {
     list.appendChild(colorItem) //append color to the list
 }
 
+//Renders the list and appends the list to the empty html div
 function renderList (userName, age, favColor) {
     const list = document.createElement('ul')   //unordered list
 
